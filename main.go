@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 	"example.com/m/v2/cpuwatcher"
+	"example.com/m/v2/vmwatcher"
 )
 
 func main() {
@@ -13,7 +14,10 @@ This is a simple CLI mockup of how it will work in the future.`)
 	fmt.Println(`
 What would you like to do next? 
 1. Change CpuWatcher Polling rate
-2. Exit`)
+2. Exit
+3. View VM Resource Allocation
+4. View VM Running Status
+5. View both VM Resource Allocation and Running Status`)
 
 	var intChoice int
 	fmt.Scanln(&intChoice)
@@ -24,9 +28,20 @@ What would you like to do next?
 		cpuwatcher.SetPollingRate(2)
 		time.Sleep(3 * time.Second) // Simulate waiting for the new polling rate to take effect
 		cpuwatcher.WatchCPU()
+	
 	case 2:
 		fmt.Println("Exiting...")
 		return
+	
+	case 3:
+		vmwatcher.VMResourceAllocation()
+	case 4:
+		vmwatcher.VMRunningStatus()
+	case 5:
+		vmwatcher.VMResourceAllocation() 
+		fmt.Println() // Add a newline for better readability
+		vmwatcher.VMRunningStatus()
+
 	default:
 		fmt.Println("Invalid choice. Please enter 1 or 2.")
 	}
