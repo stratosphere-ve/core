@@ -1,1 +1,1 @@
-# core
+# Stratosphere - Core 
