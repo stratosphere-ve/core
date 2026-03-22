@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"time"
+
 	"example.com/m/v2/cpuwatcher"
+	ramwatcher "example.com/m/v2/ramwatcher"
 	"example.com/m/v2/vmwatcher"
 )
 
@@ -17,7 +19,9 @@ What would you like to do next?
 2. Exit
 3. View VM Resource Allocation
 4. View VM Running Status
-5. View both VM Resource Allocation and Running Status`)
+5. View both VM Resource Allocation and Running Status
+6. View RAM usage
+7. Change RAM Watcher Polling rate`)
 
 	var intChoice int
 	fmt.Scanln(&intChoice)
@@ -28,19 +32,26 @@ What would you like to do next?
 		cpuwatcher.SetPollingRate(2)
 		time.Sleep(3 * time.Second) // Simulate waiting for the new polling rate to take effect
 		cpuwatcher.WatchCPU()
-	
+
 	case 2:
 		fmt.Println("Exiting...")
 		return
-	
+
 	case 3:
 		vmwatcher.VMResourceAllocation()
 	case 4:
 		vmwatcher.VMRunningStatus()
 	case 5:
-		vmwatcher.VMResourceAllocation() 
+		vmwatcher.VMResourceAllocation()
 		fmt.Println() // Add a newline for better readability
 		vmwatcher.VMRunningStatus()
+	case 6:
+		fmt.Println("Checking system RAM usage...")
+		ramwatcher.WatchRAM()
+	case 7:
+		fmt.Println("Changing RAM Watcher Polling rate... (2 secs)")
+		ramwatcher.SetPollingRate(2)
+		time.Sleep(3 * time.Second)
 
 	default:
 		fmt.Println("Invalid choice. Please enter 1 or 2.")
