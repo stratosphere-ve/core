@@ -12,16 +12,17 @@ import (
 func main() {
 	fmt.Println(`Welcome to Stratosphere!
 This is a simple CLI mockup of how it will work in the future.`)
-	cpuwatcher.WatchCPU()
 	fmt.Println(`
 What would you like to do next? 
+
 1. Change CpuWatcher Polling rate
 2. Exit
 3. View VM Resource Allocation
 4. View VM Running Status
 5. View both VM Resource Allocation and Running Status
 6. View RAM usage
-7. Change RAM Watcher Polling rate`)
+7. Change RAM Watcher Polling rate
+8. View CPU usage`)
 
 	var intChoice int
 	fmt.Scanln(&intChoice)
@@ -52,7 +53,8 @@ What would you like to do next?
 		fmt.Println("Changing RAM Watcher Polling rate... (2 secs)")
 		ramwatcher.SetPollingRate(2)
 		time.Sleep(3 * time.Second)
-
+	case 8:
+		cpuwatcher.WatchCPU()
 	default:
 		fmt.Println("Invalid choice. Please enter 1 or 2.")
 	}
