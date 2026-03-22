@@ -1,4 +1,4 @@
-package cpuwatcher
+package ramwatcher
 
 import (
 	"fmt"
