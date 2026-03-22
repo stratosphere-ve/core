@@ -11,4 +11,4 @@ It’s just a virtual environment like proxmox but written in go with plans to h
 Qemu or anything hypervisor related wont be includes for 5-6 months if we are staying on the same pace of only having me work on it. 
 
 
-Yes, I'm using AI-assisted coding, only so the project goes faster and I don't have to focus on minuscule details. 
+Yes, I'm using AI-assisted coding, only so the project goes faster and I don't have to focus on minuscule details. All of the code is still reviewed by a human (me)
