@@ -39,7 +39,7 @@ fmt.Println(`-WATCHERS-
 	switch intChoice {
 	case 1:
 		fmt.Println("Changing CpuWatcher Polling rate... (2 secs)")
-		cpuwatcher.CpuSetPollingRate(2)
+		cpuwatcher.CPUSetPollingRate(2)
 		time.Sleep(3 * time.Second) // Simulate waiting for the new polling rate to take effect
 		cpuwatcher.WatchCPU()
 
@@ -48,8 +48,9 @@ fmt.Println(`-WATCHERS-
 
 	case 3:
 		fmt.Println("Changing RAM Watcher Polling rate... (2 secs)")
-		ramwatcher.RamSetPollingRate(2)
+		ramwatcher.RAMSetPollingRate(2)
 		time.Sleep(3 * time.Second)
+		ramwatcher.WatchRAM()
 
 	case 4:
 		fmt.Println("Checking system RAM usage...")
