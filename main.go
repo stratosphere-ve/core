@@ -74,6 +74,6 @@ fmt.Println(`-WATCHERS-
 		return
 
 	default:
-		fmt.Println("Invalid choice. Please enter 1 or 2.")
+		fmt.Println("Invalid choice. Please select a valid option.")
 	}
 }
