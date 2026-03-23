@@ -6,7 +6,7 @@ https://discord.gg/uXnXwNvttF
 
 
 # About Stratosphere:
-It’s just a virtual environment like proxmox but written in go with plans to have a modular system
+It’s just a virtual environment like proxmox but written in go with plans to have a modular system.
 
 Qemu or anything hypervisor related wont be includes for 5-6 months if we are staying on the same pace of only having me work on it. 
 
