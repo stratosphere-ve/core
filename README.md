@@ -18,4 +18,4 @@ idk why I made this. I just thought it would be cool to log my thoughts and my p
 
 3-21-2026: Added real watcher functionality to both the cpu and ram watcher, thats about it
 
-3-22-2026:
+3-22-2026: Added a vmactions file, which can make a vms directory and make JSON config files in it.
