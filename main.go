@@ -5,8 +5,10 @@ import (
 	"time"
 
 	"example.com/m/v2/cpuwatcher"
-	ramwatcher "example.com/m/v2/ramwatcher"
+	"example.com/m/v2/ramwatcher"
 	"example.com/m/v2/vmwatcher"
+	"example.com/m/v2/vmactions"
+
 )
 
 func main() {
@@ -25,6 +27,7 @@ fmt.Println(`-WATCHERS-
 5. View VM Resource Allocation
 6. View VM Status
 7. View “ View VM Resource Allocation” + “View VM Status”
+8. Create VM (placeholder with no logic expect a Println)
 
 
 -OTHER-
@@ -62,6 +65,8 @@ fmt.Println(`-WATCHERS-
 		vmwatcher.VMResourceAllocation()
 		fmt.Println() // Add a newline for better readability
 		vmwatcher.VMRunningStatus()
+	case 8:
+		vmactions.VMCreate()
 
 	case 50:
 		fmt.Println("Exiting...")
