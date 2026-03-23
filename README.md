@@ -12,3 +12,10 @@ Qemu or anything hypervisor related wont be includes for 5-6 months if we are st
 
 
 Yes, I'm using AI-assisted coding, only so the project goes faster and I don't have to focus on minuscule details. All of the code is still reviewed by a human (me)
+
+# Diary
+idk why I made this. I just thought it would be cool to log my thoughts and my progress
+
+3-21-2026: Added real watcher functionality to both the cpu and ram watcher, thats about it
+
+3-22-2026: Added a vmactions file, which can make a vms directory and make JSON config files in it.
