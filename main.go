@@ -27,7 +27,7 @@ fmt.Println(`-WATCHERS-
 5. View VM Resource Allocation
 6. View VM Status
 7. View “ View VM Resource Allocation” + “View VM Status”
-8. Create VM (placeholder with no logic expect a Println)
+8. Create VM 
 
 
 -OTHER-
