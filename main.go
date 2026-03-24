@@ -13,7 +13,7 @@ import (
 
 func main() {
 	fmt.Println(`Welcome to the Stratosphere CLI!
-This is just a simple mockup/placeholder of how everything will work in the future
+This is just a simple mockup/placeholder of how everything will work in the future (in a GUI of course, not a CLI)
 
 What would you like to do next?`) 
 
@@ -31,7 +31,7 @@ fmt.Println(`-WATCHERS-
 7. View “ View VM Resource Allocation” + “View VM Status”
 8. Create VM 
 9. Delete VM
-
+10. Manage VM
 
 
 -OTHER-
@@ -75,6 +75,9 @@ fmt.Println(`-WATCHERS-
 
 	case 9:
 		vmactions.VMDelete()
+	
+	case 10:
+		vmactions.VMManage()
 
 	case 50:
 		fmt.Println("Exiting...")
