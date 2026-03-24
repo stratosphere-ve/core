@@ -24,10 +24,14 @@ fmt.Println(`-WATCHERS-
 3. Change RAMWatcher Polling rate
 4. View RAM usage
 
+-VM MANAGEMENT- (Includes VM watchers and actions)
+
 5. View VM Resource Allocation
 6. View VM Status
 7. View “ View VM Resource Allocation” + “View VM Status”
 8. Create VM 
+9. Delete VM
+
 
 
 -OTHER-
@@ -68,6 +72,9 @@ fmt.Println(`-WATCHERS-
 		vmwatcher.VMRunningStatus()
 	case 8:
 		vmactions.VMCreate()
+
+	case 9:
+		vmactions.VMDelete()
 
 	case 50:
 		fmt.Println("Exiting...")
