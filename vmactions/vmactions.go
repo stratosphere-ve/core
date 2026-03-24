@@ -37,5 +37,27 @@ func VMCreate() {
 	}
 	defer file.Close()
 
+	fmt.Println("")
 	fmt.Println("Successfully created VM!")
+}
+
+func VMDelete() {
+	vmname := ""
+	fmt.Println("What VM would you like to delete?")
+	fmt.Scanln(&vmname)
+	err := os.Remove(fmt.Sprintf("vms/%v.json", vmname))
+	if err != nil {
+		fmt.Println("Error deleting VM:", err)
+		return
+	}
+
+	fmt.Printf("Successfully deleted VM: %v", vmname)
+}
+
+
+
+
+
+
+func VMManage() {
 }
