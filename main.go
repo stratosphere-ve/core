@@ -1,5 +1,5 @@
 package main
-
+// i hate windows defender smart app control with a passion, it wont let me run the exe without blocking it, even 'go run main.go' is blocked, smh microslop atleast let me run my app.
 import (
 	"fmt"
 	"time"
