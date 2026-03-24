@@ -22,6 +22,10 @@ func VMCreate() {
 	fmt.Println("Enter VM name: ")
 	fmt.Scanln(&vmname)
 
+if strings.ContainsAny(vmname, "/\\.") {
+	fmt.Println("Invalid VM name. Contains (one or more) invalid characters: /, \\, .")
+	return
+} else {
 	for _, f := range files {
 		name := strings.TrimSuffix(f.Name(), ".json")
 		if name == vmname {
@@ -40,7 +44,7 @@ func VMCreate() {
 	defer file.Close()
 
 	fmt.Println("")
-	fmt.Println("Successfully created VM!")
+	fmt.Println("Successfully created VM!")}
 }
 
 func VMDelete() {
@@ -101,6 +105,10 @@ func VMRename() {
 	fmt.Println("What would you like to rename it to?")
 	fmt.Scanln(&newname)
 
+if strings.ContainsAny (newname, "/\\.") {
+	fmt.Println("Invalid VM name. VM names cannot contain these characters: /, \\, .")
+	return
+} else {
 	err := os.Rename(fmt.Sprintf("vms/%v.json", vmname), fmt.Sprintf("vms/%v.json", newname))
 	if err != nil {
 		fmt.Println("Error renaming VM:", err)
@@ -108,4 +116,5 @@ func VMRename() {
 	}
 
 	fmt.Printf("Successfully renamed VM from %v to %v", vmname, newname)
+}
 }
