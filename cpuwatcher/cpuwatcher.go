@@ -21,7 +21,7 @@ func WatchCPU() {
 	}
 }
 
-func SetPollingRate(rate float64) {
+func CPUSetPollingRate(rate float64) {
 	// In a real implementation, you would validate the input and update the polling rate accordingly.
 	cpuPollingRate = time.Duration(rate * float64(time.Second))
 	fmt.Printf("Setting CPU watcher polling rate to %v seconds\n", rate)

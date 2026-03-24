@@ -29,7 +29,7 @@ func WatchRAM() {
 	}
 }
 
-func SetPollingRate(rate float64) {
+func RAMSetPollingRate(rate float64) {
 	// In a real implementation, you would validate the input and update the polling rate accordingly.
 	ramPollingRate = time.Duration(rate * float64(time.Second))
 	fmt.Printf("Setting RAM watcher polling rate to %v seconds\n", rate)

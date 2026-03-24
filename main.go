@@ -1,5 +1,5 @@
 package main
-
+// i hate windows defender smart app control with a passion, it wont let me run the exe without blocking it, even 'go run main.go' is blocked, smh microslop atleast let me run my app.
 import (
 	"fmt"
 	"time"
@@ -13,7 +13,7 @@ import (
 
 func main() {
 	fmt.Println(`Welcome to the Stratosphere CLI!
-This is just a simple mockup/placeholder of how everything will work in the future
+This is just a simple mockup/placeholder of how everything will work in the future (in a GUI of course, not a CLI)
 
 What would you like to do next?`) 
 
@@ -24,10 +24,14 @@ fmt.Println(`-WATCHERS-
 3. Change RAMWatcher Polling rate
 4. View RAM usage
 
+-VM MANAGEMENT- (Includes VM watchers and actions)
+
 5. View VM Resource Allocation
 6. View VM Status
 7. View “ View VM Resource Allocation” + “View VM Status”
 8. Create VM 
+9. Delete VM
+10. Manage VM
 
 
 -OTHER-
@@ -39,7 +43,7 @@ fmt.Println(`-WATCHERS-
 	switch intChoice {
 	case 1:
 		fmt.Println("Changing CpuWatcher Polling rate... (2 secs)")
-		cpuwatcher.CpuSetPollingRate(2)
+		cpuwatcher.CPUSetPollingRate(2)
 		time.Sleep(3 * time.Second) // Simulate waiting for the new polling rate to take effect
 		cpuwatcher.WatchCPU()
 
@@ -48,8 +52,9 @@ fmt.Println(`-WATCHERS-
 
 	case 3:
 		fmt.Println("Changing RAM Watcher Polling rate... (2 secs)")
-		ramwatcher.RamSetPollingRate(2)
+		ramwatcher.RAMSetPollingRate(2)
 		time.Sleep(3 * time.Second)
+		ramwatcher.WatchRAM()
 
 	case 4:
 		fmt.Println("Checking system RAM usage...")
@@ -68,11 +73,17 @@ fmt.Println(`-WATCHERS-
 	case 8:
 		vmactions.VMCreate()
 
+	case 9:
+		vmactions.VMDelete()
+	
+	case 10:
+		vmactions.VMManage()
+
 	case 50:
 		fmt.Println("Exiting...")
 		return
 
 	default:
-		fmt.Println("Invalid choice. Please enter 1 or 2.")
+		fmt.Println("Invalid choice. Please select a valid option.")
 	}
 }
