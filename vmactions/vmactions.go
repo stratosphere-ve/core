@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	
 )
 
 func VMCreate() {
@@ -60,4 +62,50 @@ func VMDelete() {
 
 
 func VMManage() {
+option := 0
+	fmt.Println(`What would you like to do with your VM?
+1. Start
+2. Stop
+3. Restart
+4. Rename
+
+50+. Exit`)
+fmt.Scanln(&option)
+
+switch option {
+
+case 1:
+
+case 2:
+
+case 3:
+
+case 4:
+VMRename()
+
+case 50:
+	fmt.Println("Exiting VM management...")
+	return
+
+default:
+	println("Invalid option, please choose a valid option.")
+}
+}
+// Everything function below this will be used in the "VMManage" function for things such as starting, stopping, restarting, renaming, etc.
+
+func VMRename() {
+	vmname := ""
+	newname := ""
+	fmt.Println("What VM would you like to rename?")
+	fmt.Scanln(&vmname)
+	fmt.Println("What would you like to rename it to?")
+	fmt.Scanln(&newname)
+
+	err := os.Rename(fmt.Sprintf("vms/%v.json", vmname), fmt.Sprintf("vms/%v.json", newname))
+	if err != nil {
+		fmt.Println("Error renaming VM:", err)
+		return
+	}
+
+	fmt.Printf("Successfully renamed VM from %v to %v", vmname, newname)
 }
