@@ -51,6 +51,12 @@ func VMDelete() {
 	vmname := ""
 	fmt.Println("What VM would you like to delete?")
 	fmt.Scanln(&vmname)
+	
+
+if strings.ContainsAny(vmname, "/\\.") {
+	fmt.Println("Invalid VM name. Contains (one or more) invalid characters: /, \\, .")
+	return
+} else {
 	err := os.Remove(fmt.Sprintf("vms/%v.json", vmname))
 	if err != nil {
 		fmt.Println("Error deleting VM:", err)
@@ -59,7 +65,7 @@ func VMDelete() {
 
 	fmt.Printf("Successfully deleted VM: %v", vmname)
 }
-
+}
 
 
 
@@ -73,7 +79,7 @@ option := 0
 3. Restart
 4. Rename
 
-50+. Exit`)
+50. Exit`)
 fmt.Scanln(&option)
 
 switch option {
