@@ -1,0 +1,42 @@
+Each VM has its own folder for disk files and assets, while all config JSON files are stored in the vms/ directory. This layout keeps things organized and is designed to be scalable for future expansion.
+
+
+
+{
+  "vm": {
+    "name": "example",
+    "uuid": "example-id",
+    "created_at": "1970-01-01T12:00:00Z"
+  },
+
+  "cpu": {
+    "cores": 2,
+    "threads": 2,
+    "type": "host"
+  },
+
+  "memory": {
+    "size_mb": 2048
+  },
+
+  "network": {
+    "interfaces": [
+      {
+        "name": "eth0",
+        "type": "nat",
+        "mac": "auto"
+      }
+    ]
+  },
+
+  "storage": {
+    "disks": [
+      {
+        "name": "example-disk",
+        "path": "vms/example/example-disk-0.qcow2",
+        "size_gb": 20,
+        "format": "qcow2"
+      }
+    ]
+  }
+}
