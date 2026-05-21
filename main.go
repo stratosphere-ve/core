@@ -8,6 +8,7 @@ import (
 	"example.com/m/v2/ramwatcher"
 	"example.com/m/v2/vmwatcher"
 	"example.com/m/v2/vmactions"
+	"example.com/m/v2/storagewatcher"
 
 )
 
@@ -23,6 +24,9 @@ fmt.Println(`-WATCHERS-
 
 3. Change RAMWatcher Polling rate
 4. View RAM usage
+
+11. View Storage space usage
+12. View Storage usage stats
 
 -VM MANAGEMENT- (Includes VM watchers and actions)
 
@@ -78,6 +82,18 @@ fmt.Println(`-WATCHERS-
 	
 	case 10:
 		vmactions.VMManage()
+
+	case 999:
+		storagewatcher.StorageSetPollingRate(2)
+		time.Sleep(3 * time.Second)
+		// storagewatcher.WatchStorage()
+
+	case 11:
+		storagewatcher.WatchStorageSpace()
+
+	case 12:
+		storagewatcher.WatchStorageUsage()
+
 
 	case 50:
 		fmt.Println("Exiting...")
