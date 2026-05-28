@@ -11,7 +11,6 @@ Each VM has its own folder for disk files and assets, while all config JSON file
 
   "cpu": {
     "cores": 2,
-    "threads": 2,
     "type": "host"
   },
 
