@@ -21,6 +21,7 @@ Each VM has its own folder for disk files and assets, while all config JSON file
   "network": {
     "interfaces": [
       {
+        // Name is what the QEMU Ethernet adapter connects to from the host. for example, on the host you had two network adapters named eth0 and wlan0, in the name section you would chose for example wlan0 if you wanted the VM to connect to the host wifi
         "name": "eth0",
         "type": "nat",
         "mac": "auto"
