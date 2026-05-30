@@ -9,6 +9,7 @@ import (
 	"example.com/m/v2/vmwatcher"
 	"example.com/m/v2/vmactions"
 	"example.com/m/v2/storagewatcher"
+	"example.com/m/v2/vmparser"
 
 )
 
@@ -100,6 +101,13 @@ fmt.Println(`-WATCHERS-
 		return
 
 
+
+	case 51:
+	  var vmname string
+    fmt.Scanln(&vmname)
+
+    cpu := vmparser.CPU{}
+    vmparser.VMParserWriterCPU(vmname, cpu)
 
 	default:
 		fmt.Println("Invalid choice. Please select a valid option.")

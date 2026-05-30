@@ -130,6 +130,13 @@ func VMRename() {
 	fmt.Printf("Successfully renamed VM from %v to %v\n", vmname, newname)
 }
 
+
+func VMStart() {
+
+	
+}
+
+
 func NewVMConfigure() {
 
 	currentTime := time.Now()
