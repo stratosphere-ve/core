@@ -99,6 +99,8 @@ fmt.Println(`-WATCHERS-
 		fmt.Println("Exiting...")
 		return
 
+
+
 	default:
 		fmt.Println("Invalid choice. Please select a valid option.")
 	}

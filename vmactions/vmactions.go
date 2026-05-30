@@ -230,7 +230,15 @@ func NewVMConfigure() {
 
 func VMManageConfigure() {
 	var option int
+	var vmname string
+	fmt.Println("Please select your VM name to configure:")
+	fmt.Scanln(&vmname)
+	if strings.ContainsAny(vmname, "/\\.") {
+		fmt.Println("Invalid VM name. Contains (one or more) invalid characters: /, \\, .")
+		return
+	}
 
+	
 	fmt.Println(`What would you like to configure?
 1. CPU
 2. Memory
@@ -267,6 +275,10 @@ func VMConfigureCPU() {
 	fmt.Println("1. Cores\n2. Type")
 	fmt.Scanln(&option)
 	switch option {
+
+	case 1:
+
+	case 2:
 
 	}
 }
